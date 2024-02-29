@@ -16,7 +16,7 @@ const Main2 = () => {
         const pokeFun = async () => {
             setIsLoading(true);
             try {
-                setUrl(url) 
+                console.log(url)
                 const res = await axios.get(url);
                 const { next, previous, results } = res.data;
                 setPrevUrl(previous);
@@ -43,8 +43,6 @@ const Main2 = () => {
         pokeFun();
     }, [url]);
 
-    /* error when the name of the pokemon is added through the input the hole page is reactualises
-     instead of just having the right side*/
     const handleSearch = async () => {
         console.error("Api called two time// reactualisation of the page")
         if (searchQuery.trim() === '') {
@@ -52,9 +50,9 @@ const Main2 = () => {
         } else {
             const searchUrl = `https://pokeapi.co/api/v2/pokemon/${searchQuery.toLowerCase()}`;
             try {
-                setIsLoading(true);
-                const res = await axios.get(searchUrl);
-                setPokedex(res.data);
+
+                const res2 = await axios.get(searchUrl);
+                setPokedex(res2.data);
                 setIsLoading(false);
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -74,14 +72,14 @@ const Main2 = () => {
                 </div>
             </div>
             <div className="right-content">
-            <div className="search">
-            <input
+                <div className="search">
+                    <input
                         className="input"
                         placeholder="Search a pokemon name"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
-                <button type="button" className="btn-submit" onClick={handleSearch}>Submit</button>
+                    <button type="button" className="btn-submit" onClick={handleSearch}>Submit</button>
                 </div>
                 {<Pokeinfo data={pokeDex} />}
             </div>
