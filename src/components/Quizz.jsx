@@ -14,7 +14,7 @@ const Quizz = ({ quizzData, updateRandomUrl }) => {
 
     const checkPokemonName = async (submittedQuery, pokemonName) => {
         if (submittedQuery.toLowerCase() === pokemonName.trim().toLowerCase()) {
-            setScore(score + 1); // Increment score
+            setScore(score + 1); 
             setTimeout(() => {
                 updateRandomUrl();
             }, 1000);
@@ -22,7 +22,7 @@ const Quizz = ({ quizzData, updateRandomUrl }) => {
             console.log(pokemonName)
             console.log(submittedQuery)
             console.log("wrong pokemon name")
-            setScore(0); // Reset score
+            setScore(0); 
         }
     };
 
