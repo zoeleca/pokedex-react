@@ -16,7 +16,6 @@ const Main2 = () => {
         const pokeFun = async () => {
             setIsLoading(true);
             try {
-                console.log(url)
                 const res = await axios.get(url);
                 const { next, previous, results } = res.data;
                 setPrevUrl(previous);
