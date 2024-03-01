@@ -7,7 +7,7 @@ I'm using the <a href='https://github.com/zoeleca/Pokedex-and-Pokemon'>first ver
 And I am trying to re-write it using a new tech: REACT. 
 
 ## Stack Tech 
-- FrameWork : REACT
+- FrameWork : REACT & Vite
 - Client : HTML, CSS,
 - Server : JS, Pokemon Api (JSON File)
 
